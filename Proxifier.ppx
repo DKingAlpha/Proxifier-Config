@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxifierProfile version="101" platform="Windows" product_id="0" product_minver="310">
+  <Options>
+    <Resolve>
+      <AutoModeDetection enabled="false" />
+      <ViaProxy enabled="true">
+        <TryLocalDnsFirst enabled="false" />
+      </ViaProxy>
+      <ExclusionList>%ComputerName%; localhost; *.local</ExclusionList>
+    </Resolve>
+    <Encryption mode="disabled" />
+    <HttpProxiesSupport enabled="false" />
+    <HandleDirectConnections enabled="false" />
+    <ConnectionLoopDetection enabled="true" />
+    <ProcessServices enabled="false" />
+    <ProcessOtherUsers enabled="false" />
+  </Options>
+  <ProxyList>
+    <Proxy id="100" type="SOCKS5">
+      <Address>127.0.0.1</Address>
+      <Port>1080</Port>
+      <Options>48</Options>
+    </Proxy>
+  </ProxyList>
+  <ChainList />
+  <RuleList>
+    <Rule enabled="true">
+      <Name>ShadowsocksR-dotnet4.0.exe [auto-created]</Name>
+      <Applications>ShadowsocksR-dotnet4.0.exe;
+ShadowsocksR-dotnet2.0.exe;
+Shadowsocks.exe;</Applications>
+      <Action type="Direct" />
+    </Rule>
+    <Rule enabled="true">
+      <Name>Localhost</Name>
+      <Targets>localhost; 127.0.0.1; %ComputerName%</Targets>
+      <Action type="Direct" />
+    </Rule>
+    <Rule enabled="true">
+      <Name>BypassSteamDownload</Name>
+      <Targets>valve*.steamcontent.com;
+*.8686c.com;
+*.bscstorage.net;
+*.wmsj.cn;</Targets>
+      <Action type="Direct" />
+    </Rule>
+    <Rule enabled="true">
+      <Name>CommonDomain</Name>
+      <Targets>*.google.com;
+*.goo.gl;
+*.google.com.hk;
+*.google.com.sg;
+*.gstatic.com;
+*.googleusercontent.com;
+*.gmail.com;
+*.googleapis.com;
+*.google-analytics.com;
+*.ytimg.com;
+*.github.com;
+*.steamcommunity.com;
+*.facebook.com;
+*.youtube.com;
+*.youtu.be;
+*.telegram.org;
+*.t.me;
+*.doubleclick.net;
+*.s3.amazonaws.com;
+*.akamaihd.net;
+*.pki.goog;
+*.eclipse.org;
+*.ubi.com;
+aka.ms;
+*.aka.ms;
+*.microsoft.com;
+*.nflxvideo.net;
+*.nflxso.net;
+*.netflix.com;
+steam-chat.com;</Targets>
+      <Action type="Proxy">100</Action>
+    </Rule>
+    <Rule enabled="true">
+      <Name>Steam</Name>
+      <Applications>Steam.exe;
+SteamService.exe;
+steamwebhelper.exe;
+GameOverlayUI.exe;</Applications>
+      <Action type="Proxy">100</Action>
+    </Rule>
+    <Rule enabled="true">
+      <Name>Discord</Name>
+      <Applications>Discord.exe;
+Update.exe</Applications>
+      <Action type="Proxy">100</Action>
+    </Rule>
+    <Rule enabled="true">
+      <Name>GTA5</Name>
+      <Applications>GTA*.exe;
+subprocess.exe;
+SocialClub*;</Applications>
+      <Action type="Proxy">100</Action>
+    </Rule>
+    <Rule enabled="true">
+      <Name>WatchDogs2</Name>
+      <Applications>upc.exe;
+UplayWebCore.exe;
+WatchDogs2.exe;</Applications>
+      <Action type="Proxy">100</Action>
+    </Rule>
+    <Rule enabled="true">
+      <Name>NVIDIA</Name>
+      <Applications>"NVIDIA GeForce Experience.exe";
+"NVIDIA Web Helper.exe"</Applications>
+      <Ports>80;443;8080</Ports>
+      <Action type="Proxy">100</Action>
+    </Rule>
+    <Rule enabled="true">
+      <Name>PUBG</Name>
+      <Applications>TslGame*;
+</Applications>
+      <Action type="Proxy">100</Action>
+    </Rule>
+    <Rule enabled="true">
+      <Name>Node</Name>
+      <Applications>node.exe;</Applications>
+      <Action type="Proxy">100</Action>
+    </Rule>
+    <Rule enabled="true">
+      <Name>Default</Name>
+      <Action type="Direct" />
+    </Rule>
+  </RuleList>
+</ProxifierProfile>
