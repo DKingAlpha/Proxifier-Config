@@ -18,7 +18,7 @@
   <ProxyList>
     <Proxy id="100" type="SOCKS5">
       <Address>127.0.0.1</Address>
-      <Port>1080</Port>
+      <Port>2081</Port>
       <Options>48</Options>
     </Proxy>
   </ProxyList>
@@ -41,7 +41,10 @@ Shadowsocks.exe;</Applications>
       <Targets>valve*.steamcontent.com;
 *.8686c.com;
 *.bscstorage.net;
-*.wmsj.cn;</Targets>
+*.wmsj.cn;
+*.cdn.ubi.com;
+*.download.nvidia.com;
+steamcdn-a.akamaihd.net;</Targets>
       <Action type="Direct" />
     </Rule>
     <Rule enabled="true">
@@ -75,7 +78,8 @@ aka.ms;
 *.nflxvideo.net;
 *.nflxso.net;
 *.netflix.com;
-steam-chat.com;</Targets>
+steam-chat.com;
+*.visualstudio.com;</Targets>
       <Action type="Proxy">100</Action>
     </Rule>
     <Rule enabled="true">
@@ -113,7 +117,7 @@ WatchDogs2.exe;</Applications>
       <Ports>80;443;8080</Ports>
       <Action type="Proxy">100</Action>
     </Rule>
-    <Rule enabled="true">
+    <Rule enabled="false">
       <Name>PUBG</Name>
       <Applications>TslGame*;
 </Applications>
@@ -122,6 +126,35 @@ WatchDogs2.exe;</Applications>
     <Rule enabled="true">
       <Name>Node</Name>
       <Applications>node.exe;</Applications>
+      <Action type="Proxy">100</Action>
+    </Rule>
+    <Rule enabled="true">
+      <Name>SourceTree</Name>
+      <Targets>*.amazontrust.com;
+*.atlassian.com;
+*.atl-paas.net</Targets>
+      <Action type="Proxy">100</Action>
+    </Rule>
+    <Rule enabled="true">
+      <Name>Ban Ableton</Name>
+      <Applications>"Ableton Live 10 Suite.exe";
+"Ableton Web Connector.exe";</Applications>
+      <Action type="Block" />
+    </Rule>
+    <Rule enabled="false">
+      <Name>FIVEM</Name>
+      <Applications>FiveM.exe;</Applications>
+      <Action type="Proxy">100</Action>
+    </Rule>
+    <Rule enabled="false">
+      <Name>Origin</Name>
+      <Targets>*.ea.com;
+*.origin.com;</Targets>
+      <Action type="Proxy">100</Action>
+    </Rule>
+    <Rule enabled="true">
+      <Name>Epic Games</Name>
+      <Applications>EpicGamesLauncher.exe;</Applications>
       <Action type="Proxy">100</Action>
     </Rule>
     <Rule enabled="true">
